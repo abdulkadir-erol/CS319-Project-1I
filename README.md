@@ -20,4 +20,4 @@ Peer review app!
    - Every student is directed to assess each other from various aspects through a 1-5/1-10 scale
    - Every student is directed to clarify the value they give by commenting
    - All the scales and comments will be added to the target student's information card (this can be only seen by host)
-* Close the course by host at the end of the semester :)
+* Close the course by host at the end of the semester
