@@ -21,3 +21,7 @@ Peer review app!
    - Every student is directed to clarify the value they give by commenting
    - All the scales and comments will be added to the target student's information card (this can be only seen by host)
 * Close the course by host at the end of the semester
+
+
+* Compare members about their peer review scores
+* List all members and sort them by selected category scores
