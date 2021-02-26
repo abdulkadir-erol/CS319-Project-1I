@@ -27,3 +27,8 @@ Peer review app!
 
 * Compare members about their peer review scores
 * List all members and sort them by selected category scores
+
+There should be artifact review functionality.
+There should be student dashboard. For instance, it contains the reviews about that student.
+Statistics should be displayed.
+There are several types of review questions. Maybe some of them could be provided as templates.
