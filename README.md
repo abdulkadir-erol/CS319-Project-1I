@@ -18,17 +18,10 @@ Peer review app!
 * Shuffle the "without group member" category into avaliable groups
 * Every student evaluate each member's group work privately (can be seen only by host)
    - Every student is directed to assess each other from various aspects through a 1-5/1-10 scale
-   - Every student is directed to clarify the value they give by commenting
+   - Every student is directed to clarify the value they give by commenting (There will be some template review questions&answers)
    - All the scales and comments will be added to the target student's information card (this can be only seen by host)
+   - Statistics are displayed.
 * Close the course by host at the end of the semester
-
-
-
-
 * Compare members about their peer review scores
 * List all members and sort them by selected category scores
-
-There should be artifact review functionality.
-There should be student dashboard. For instance, it contains the reviews about that student.
-Statistics should be displayed.
-There are several types of review questions. Maybe some of them could be provided as templates.
+* Artifact review functionality.
