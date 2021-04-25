@@ -74,6 +74,7 @@ class Student extends Db
     }
 
     //Return all student from database
+    //@return  results -> the array containing the all students
     protected function getStudents()
     {
       $sql = "SELECT * FROM student";
@@ -86,6 +87,35 @@ class Student extends Db
      //Return a student from database using ID
      //@parameter id -> the id of the student
      //@return  results -> the array containing the student.
+    protected function getStudentByStudentID($studentID)
+    {
+      //find matching table entries
+      $sql = "SELECT * FROM student WHERE student_id = '$id'";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([]);
+      //put the information into an array
+      $results = $stmt->fetchAll();
+      return $results;
+    }
+
+    //Return a student from database using ID
+    //@parameter id -> the id of the student
+    //@return  results -> the array containing the student.
+   protected function getStudentsByGroup($groupNum)
+   {
+     //find matching table entries
+     $sql = "SELECT * FROM student WHERE group_number = '$groupNum'";
+     $stmt = $this->connect()->prepare($sql);
+     $stmt->execute([]);
+     //put the information into an array
+     $results = $stmt->fetchAll();
+     return $results;
+   }
+
+
+    //This is different from above. This ID is created by the database
+    //and is unique for each student, it is used to get a student
+    //across different sessions inside the website.
     protected function getStudentByID($id)
     {
       //find matching table entries
@@ -97,7 +127,8 @@ class Student extends Db
       return $results;
     }
 
-    //Return a student from database using ID
+
+    //Return a student from database using email
     //@parameter email -> the email of the student
     //@return  results -> the array containing the student.
     protected function getStudentByEmail($email)
@@ -127,25 +158,34 @@ class Student extends Db
       //if the email does not exists in DB, try to insert the user
       else
       {
-        try {
-          //Hashing is used to increase security
-          $password = password_hash($password, PASSWORD_DEFAULT);
-          //create the sql command. Question marks will be replaced below
-          $sql = "INSERT INTO student(email,password,
-                                      name,studentID,group_number,section)
-                                      VALUES (?,?,?,?,?,?)";
-          //prepare the connection for insertion
-          $stmt = $this->connect()->prepare($sql);
-          //execute the insertion by replacing variables
-          $stmt->execute([$email,$password,$studentID,$name,$groupNumber,$section]);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+        if (filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+          try {
+            //Hashing is used to increase security
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            //create the sql command. Question marks will be replaced below
+            $sql = "INSERT INTO student(email,password,studentID,
+                                        name,group_number,section)
+                                        VALUES (?,?,?,?,?,?)";
+            //prepare the connection for insertion
+            $stmt = $this->connect()->prepare($sql);
+            //execute the insertion by replacing variables
+            $stmt->execute([$email,$password,$studentID,$name,$groupNumber,$section]);
+          } catch (PDOException $e) {
+              echo $e->getMessage();
+          }
         }
+        else {
+          echo "Invalid email address";
+        }
+
       }
       }
 
 
     //a function that is used for login
+    //@parameter email -> email address of the student
+    //@parameter password -> password of the student
     protected function checkCredentials($email, $password)
     {
       try {
@@ -166,7 +206,10 @@ class Student extends Db
           {
             //assign the session user by using id and redirect to the
             //student home page
-            $_SESSION['user'] = $results[0]['id'];
+            //session variable is assigned as the id created by the DB
+            //by doing this we do not store any user entered information
+            //while in a session
+            $_SESSION['user'] = $results[0]['studentID'];
             header('location:studenthome.php');
           }
           else {
@@ -175,13 +218,11 @@ class Student extends Db
 
         }
         else {
-          echo "Account is not in database";
+          echo "Email is not in database";
         }
       } catch (PDOException $e) {
           echo $e->getMessage();
       }
-
-
     }
 }
  ?>
