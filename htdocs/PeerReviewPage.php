@@ -10,6 +10,10 @@ if(!isset($_SESSION['status']))
 $myStudentController = new StudentController();
 $myStudentView = new StudentView();
 $student = $myStudentController->getStuByStudentID($_SESSION['user']);
+if($student['group_number']==0)
+{
+  header("Location: StudentMenuPage.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
