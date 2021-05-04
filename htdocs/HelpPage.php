@@ -151,7 +151,11 @@ button {
 		</div>
 		<div class="bodyTitle">
 			<a href="http://www.cs.bilkent.edu.tr/~eraytuzun/teaching/cs319/"> CS319 Web Page</a>
+			<br>
 		</div>
+		<div class="bodyTitle">
+         		<a href="http://bilkentcs319-spring21.slack.com">Slack Channel</a>
+      		</div>
 </div>
 
 
