@@ -158,7 +158,11 @@ th {
   <div class="column left">
 <?php
 $stu = new StudentView();
-$stu->showStudentsByGroup(0, $student['section']);
+$stu->showStudentsByGroup(0, 1);
+	  echo "<br>";
+$stu->showStudentsByGroup(0, 2);
+	  echo "<br>";
+$stu->showStudentsByGroup(0, 3);
  ?>
 
   </div>
@@ -204,7 +208,7 @@ echo "<meta http-equiv='refresh' content='0'>";
      <input type="text" placeholder="Enter Group Number" name="psw" required>
    <br>
    <br>
-     <input type="submit" value="Login" name="submit">
+     <input type="submit" value="Add" name="submit">
      <br>
      <br>
 
