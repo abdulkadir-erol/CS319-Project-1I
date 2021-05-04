@@ -8,8 +8,8 @@ class db {
     //Properties of database class
     //since we are using phpMyAdmin these are the default values for variables
     private $host = 'localhost';
-    private $user = 'maruf';
-    private $password = '123456';
+    private $user = 'root';
+    private $password = '';
     private $dbName = 'peerreview';
 
     protected function connect()
