@@ -178,7 +178,7 @@ th, td {
                                             $_POST["knowScore"]);
               }
               else {
-                echo "It is nice to see that you are eager to review others who is not in your group, nevertheless, please enter an ID beloging to one of your peers.";
+                echo "It is nice to see that you are eager to review others who is not in your group, nevertheless, please enter an ID belonging to one of your peers.";
               }
 
             }
