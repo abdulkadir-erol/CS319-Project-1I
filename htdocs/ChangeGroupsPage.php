@@ -204,7 +204,7 @@ $flag = True;
 </div>
 <form method="post" action="ChangeGroupsPage.php">
 <div class="containerBody">
-	<label for="labels">Student with ID <a href="ViewInformationCardPage.php"><?php echo $requestStudentId; ?></a> requests to transfer from <a href="#"><?php echo $requestGroupSection.$requestGroupNums; ?></a> to <a href="#"><?php echo $requestGroupTarget ?></a>.</label>
+	<label for="labels">Student with ID <?php echo $requestStudentId; ?> requests to transfer from <?php echo $requestGroupSection.$requestGroupNums; ?> to <?php echo $requestGroupTarget ?>.</label>
    <br><br>
    <input type="submit" value="Deny" name="deny">
    <input type="submit" value="Approve" name="approv">
