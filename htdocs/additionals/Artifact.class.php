@@ -133,5 +133,15 @@ class Artifact extends db
 
 
     }
+    
+    protected function getArtifactsByGroupAndName($groupNum,$artifactName)
+  {
+    $sql = "SELECT * FROM artifact WHERE name = '$artifactName' AND group_number = '$groupNum'" ;
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([]);
+    //put all table entries into an array
+    $results = $stmt->fetchAll();
+    return $results;  //return the array
+  }
 
 }
