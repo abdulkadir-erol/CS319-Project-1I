@@ -157,7 +157,7 @@ th, td {
 		<option value="Analysis Report IT1">Analysis Report IT1</option>
 		<option value="Analysis Report IT2">Analysis Report IT2</option>
 		<option value="Design Report IT1">Design Report IT1</option>
-		<option value="Design Report IT2">Design Report IT2 <link rel="import" href="">2</option>
+		<option value="Design Report IT2">Design Report IT2</option>
 		<option value="Final Report">Final Report</option>
 	</select>
 	<br><br><br>
@@ -180,11 +180,18 @@ th, td {
                  echo "The group you have entered does not exist.";
                }
                else {
+		       $myArtifactController = new ArtifactController();
+                  $adiniSenKoy = $myArtifactController->getArtifactByGroupAndName($_POST["groupnum"],$_POST["selectReview"]);
+                  if (count($adiniSenKoy) == 0) {
+                     echo "No artifacts exist.";
+                  }
+                  else {
                  $myArtifactCommentController->uploadArtifactComment($_POST["artifactComment"],
                                                               $_POST["groupnum"],
                                                               $_SESSION["user"],
                                                               date('Y-m-d H:i:s'),
                                                               $_POST["selectReview"]);
+		  }
                }
 
 
