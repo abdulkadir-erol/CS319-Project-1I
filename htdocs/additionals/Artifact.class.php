@@ -110,7 +110,6 @@ class Artifact extends db
           $stmt = $this->connect()->prepare($sql);
           $stmt->execute([]);
           //put all table entries into an array
-          echo "inserted ahmet";
           $results = $stmt->fetchAll();
           if(count($results) == 0)
           {
