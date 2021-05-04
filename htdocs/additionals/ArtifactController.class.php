@@ -29,4 +29,9 @@ class ArtifactController extends Artifact
     {
       return $this->getArtifactsByGroup($groupNum);
     }
+    
+    public function getArtifactByGroupAndName($groupNum, $artifactName)
+    {
+      return $this->getArtifactsByGroupAndName($groupNum,$artifactName);
+    }
 }
