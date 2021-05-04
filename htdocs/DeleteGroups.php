@@ -143,11 +143,7 @@ $gr = new GroupController();
 if(isset($_POST['saveChanges']))
 {
   $gr->deleteGroups($_POST["sectionNum"], $_POST["groupNum"]);
-  echo "otherrr";
-}else {
-  echo "else";
 }
-echo "create groups page";
  ?>
 <div class="containerBody">
 	<div class="row">
