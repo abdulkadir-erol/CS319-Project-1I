@@ -189,7 +189,7 @@ th {
   <div class="bodyText">
       <label for="psw">Enter Student ID to get reviews</label>
     </div>
-    <input type="text" placeholder="Enter StudentID" name="stuID" required>
+    <input type="text" placeholder="Enter StudentID" name="stuID">
       <input type="submit" value="Get Reviews" name="signup">
  <br><br><br>
   <?php
