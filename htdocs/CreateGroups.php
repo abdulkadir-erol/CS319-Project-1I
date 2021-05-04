@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-<title>Create Groups Page</title>
+<title>Snitch</title>
 <style>
 
 /* Top Menu Bar of the website */
@@ -144,11 +144,7 @@ th, td {
   if(isset($_POST['saveChanges']))
   {
     $gr->createGroup($_POST["sectionNumber"], $_POST["groupCount"], $_POST["maxGroupSize"], $_POST["minGroupSize"]);
-    echo "otherrr";
-  }else {
-    echo "else";
   }
-echo "create groups page";
  ?>
 <div class="containerBody">
 	<div class="row">
