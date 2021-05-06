@@ -114,7 +114,9 @@ button {
 
 <div class="topBar">
   <div class="greeting">
-      <?php echo "Welcome to SNITCH," . $student['name']?>
+      <?php if( $_SESSION['role'] != "Host")
+		{echo "Welcome to SNITCH," . $student['name'];
+		}?>
   </div>
 		<a href="LogOut.php">Log Out</a>
 		<a href="HelpPage.php">Help</a>
