@@ -52,7 +52,7 @@ class Artifact extends db
     //@return  results -> the array containing the all artifacts
     public function getArtifacts()
     {
-      $sql = "SELECT * FROM artifact";
+      $sql = "SELECT * FROM artifact ORDER BY group_number,name";
       $stmt = $this->connect()->prepare($sql);
       $stmt->execute([]);
       //put all table entries into an array
