@@ -121,7 +121,7 @@ th, td {
 
 <div class="topBar">
   <div class="greeting">
-      <?php echo "Welcome to SNITCH," ?>
+      <?php echo "Welcome to SNITCH, Host" ?>
   </div>
 		<a href="LogOut.php">Log Out</a>
 		<a href="HelpPage.php">Help</a>
