@@ -111,12 +111,12 @@ button {
   height: 300px; /* Should be removed. Only for demonstration */
 }
 
-.left, .middle {
+.left {
   width: 18%;
 }
 
 .right {
-  width: 64%;
+  width: 82%;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -182,7 +182,7 @@ th, td {
       <br>
           <?php $myDeadlineView->showAllDeadlines(); ?>
 		</div>
-    	<div class="column middle" style="background-color:#f19da7;">
+    	<div class="column right" style="background-color:#f19da7;">
     			<table style="width:80%">
     				<?php $myStudentCommentView->showStudentCommentsByTargetID($_SESSION['user']); ?>
     			</table>
