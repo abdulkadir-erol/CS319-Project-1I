@@ -48,14 +48,10 @@ class Group extends db{
           $stmt->execute([$section, $startGroupName,$first,$minGroupSize, $maxGroupSize]);
           $asciivalue += 1;
           $startGroupName = chr($asciivalue);
-          echo "here";
         } catch (PDOException $e) {
           echo $e->getMessage();
         }
       }
-
-
-      echo("added");
     }else {
       $lastGroup;
       foreach ($results as $result) {
@@ -75,8 +71,6 @@ class Group extends db{
           $asciivalue += 1;
           $lastGroup = chr($asciivalue);
           $stmt->execute([$section, $lastGroup,$first,$minGroupSize, $maxGroupSize]);
-
-          echo "here";
         } catch (PDOException $e) {
           echo $e->getMessage();
         }
