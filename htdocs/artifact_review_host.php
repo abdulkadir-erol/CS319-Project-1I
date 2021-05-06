@@ -154,7 +154,7 @@ th, td {
 		<option value="Analysis Report IT1">Analysis Report IT1</option>
 		<option value="Analysis Report IT2">Analysis Report IT2</option>
 		<option value="Design Report IT1">Design Report IT1</option>
-		<option value="Design Report IT2">Design Report IT2 <link rel="import" href="">2</option>
+		<option value="Design Report IT2">Design Report IT2 <link rel="import" href=""></option>
 		<option value="Final Report">Final Report</option>
 	</select>
 	<br><br><br>
